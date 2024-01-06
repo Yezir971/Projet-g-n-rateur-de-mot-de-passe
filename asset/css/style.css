@@ -1,0 +1,158 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/imageForet1.webp') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.contenerPrincipaleProjet{
+    color: white;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border: solid 1px black;
+    border-radius: 30px;
+    width: 50vw;
+    height: 88vh;
+    padding: 20px 0;
+}
+
+.longeurMotDePasse , .contenerCompositionMotDePasse , .compositionMotDePasse , .fiabiliteMotDePasse , .tempsPourTrouverLeMotDePasse, .contenerMotDePasse{
+    border-radius: 20px;
+    width: 40vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.contener{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+#rangeMDP{
+    width: 37vw;
+    margin: auto;
+}
+
+.listeComosition{
+    gap: 30px;
+}
+.listeComposition{
+    list-style: none;
+}
+
+
+/* style des btn générer à nouveau et copier  */
+.copier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+.copier, .generer{
+    color: white;
+}
+
+.btn{
+    padding: 4px;
+    border-radius: 10px;
+    color: white;
+    background: none;
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+}
+.btn:hover{
+    backdrop-filter: blur(20px);
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgb(255, 255, 255);
+    z-index: -1;
+    transition: 0.8s;
+}
+
+.copier::before, .generer::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.copier:hover::before, .generer:hover::before{
+    height: 180%;
+}
+/* fin des style des btn générer à nouveau et copier */
+
+/* style de la zone de texte générer, c'est a dire le mot de passe  */
+.motDePasseGenerer{
+    overflow: auto;
+    width: 70%;
+    height: 40%;
+    border-bottom: solid 3px rgb(93, 89, 89);
+    font-size: 3vh;
+}
+
+/* partie responsive  */
+
+
+
+@media screen and (max-width:1050px) {
+    .contenerPrincipaleProjet{
+        width: 100%;
+    }
+    .longeurMotDePasse , .contenerCompositionMotDePasse , .compositionMotDePasse , .fiabiliteMotDePasse , .tempsPourTrouverLeMotDePasse, .contenerMotDePasse{
+        width: 90%;
+        height: 100%;
+
+    }
+    #rangeMDP{
+        width: 80vw;
+    }
+    
+}
+
+@media screen and (max-height:696px) {
+    .motDePasseGenerer{
+        font-size: 2vh;
+    }
+    
+}
+
+@media screen and (max-width:320px) {
+    .h1, .h2{
+        font-size:small;
+    }
+    
+}
+
